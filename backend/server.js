@@ -27,14 +27,14 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-app.use(express.json()); // Parse incoming JSON data
+app.use(express.json());
 
 // Serve static files (e.g., for media)
 app.use('/uploads', express.static('uploads'));
 
 // API routes
-app.use('/api/auth', authRoutes); // Authentication routes under /api/auth
-app.use('/api/chat', chatRoutes); // Chat-related routes under /api/chat
+app.use('/api/auth', authRoutes);
+app.use('/api/chat', chatRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs)); // Swagger documentation
 
 // Socket.IO real-time messaging

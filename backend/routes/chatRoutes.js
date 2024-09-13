@@ -12,7 +12,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/chat/create:
+ * /chat/create:
  *   post:
  *     summary: Create or join a one-on-one or group chat
  *     tags: [Chat]
@@ -62,7 +62,7 @@ router.post('/create', chatController.createOrJoinChat);
 
 /**
  * @swagger
- * /api/chat/message:
+ * /chat/message:
  *   post:
  *     summary: Send a message (text or media) in a chat
  *     tags: [Chat]
@@ -114,7 +114,7 @@ router.post('/message', upload.single('media'), chatController.sendMessage);
 
 /**
  * @swagger
- * /api/chat/{chatId}/messages:
+ * /chat/{chatId}/messages:
  *   get:
  *     summary: Fetch messages from a chat
  *     tags: [Chat]
